@@ -32,8 +32,9 @@ async def summarize_file(
     # Call AI
     try:
         summary = ai_client.summarize(text, length_enum, type_enum)
-    except Exception:
-        raise HTTPException(status_code=500, detail="AI service error")
+    except Exception as e:
+        print("AIClient error:", e)
+        raise HTTPException(status_code=500, detail=f"AI service error: {e}")
 
     return {
         "filename": file.filename,

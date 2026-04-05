@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body>
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
           {/* Animated background elements */}
           <div className="fixed inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-float"></div>

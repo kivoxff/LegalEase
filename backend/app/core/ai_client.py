@@ -69,11 +69,21 @@ class AIClient:
     def _groq_create_document(self, title: str, content: str) -> str:
         url = "https://api.groq.com/openai/v1/chat/completions"
         headers = {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
-        prompt = f"Create a professional legal document titled '{title}' with the following content:\n\n{content}"
+        prompt = f"""Create a professional legal document titled '{title}' using the following content: {content}
+
+        Instructions:
+        - Format the output fully in Markdown so it can be rendered with react-markdown.
+        - Use `#` for the main title, `##` for sections/subheadings.
+        - Use bullet points (`-`) for lists, obligations, or clauses.
+        - Use blockquotes (`>`) for important notes or summaries.
+        - Include tables if listing items with multiple attributes (e.g., parties, dates, obligations).
+        - Ensure proper line breaks between headings, bullets, and paragraphs.
+        - Keep the document organized, professional, and clean."""
+
         payload = {
             "model": "llama-3.3-70b-versatile",
             "messages": [
-                {"role": "system", "content": "You are a professional legal document creator."},
+                {"role": "system", "content": "You are a professional legal document creator with expertise in Markdown formatting."},
                 {"role": "user", "content": prompt}
             ],
             "max_tokens": 1000
@@ -94,8 +104,28 @@ class AIClient:
             SummaryLength.DETAILED: "detailed summary"
         }
         type_map = {
-            SummaryType.BULLET: "in bullet points",
-            SummaryType.KEY_CLAUSES: "highlighting key clauses and statements",
-            SummaryType.EXECUTIVE: "as an executive summary"
+            SummaryType.BULLET: (
+            "Extract the most important points and present them as concise bullet points. "
+            "Avoid full sentences unless necessary. Focus on quick readability."
+        ),
+            SummaryType.KEY_CLAUSES: (
+            "Identify and emphasize the key clauses, conditions, and statements. "
+            "Use subheadings (##) for each clause and bullet points for details. "
+            "Keep the content precise and legally relevant."
+        ),
+            SummaryType.EXECUTIVE: (
+            "Summarize the document for a high-level executive overview. "
+            "Highlight objectives, outcomes, and important statements using headings (#, ##) and blockquotes (>). "
+            "Provide a narrative flow rather than just lists."
+        )
         }
-        return f"Please provide a {length_map[length]} of the following text {type_map[s_type]}:\n\n{text}"
+        return f""" Please provide a **{length_map[length]}** of the following text, formatted in **Markdown**.
+
+        Formatting guidelines:
+        - {type_map[s_type]}
+        - Use `#` for main headings, `##` for subheadings.
+        - Use `-` or `*` for bullet points.
+        - Use `>` for important statements or summaries.
+        - Make the output clean and structured so it can be directly rendered using react-markdown in a Next.js app.
+
+        Text to summarize: {text}"""

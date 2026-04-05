@@ -81,7 +81,6 @@ LEGAL-EASE/
 │   │   ├── components/
 │   │   │   ├── ConvertSection.jsx
 │   │   │   ├── CreateSection.jsx
-│   │   │   ├── DocumentPreview.jsx
 │   │   │   ├── HeroSection.jsx
 │   │   │   ├── Navbar.jsx
 │   │   │   ├── SummarizeSection.jsx

@@ -12,7 +12,7 @@ export default function HeroSection() {
     <section className="relative max-w-7xl mx-auto px-6 pt-32 pb-24 lg:pt-40 lg:pb-32">
       
       {/* Background ambient light for the hero */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[300px] bg-primary-500/20 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-75 bg-primary-500/20 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 text-center mb-16">
         
@@ -27,7 +27,7 @@ export default function HeroSection() {
         {/* Main Heading */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-display font-bold mb-8 tracking-tight text-white leading-[1.1]">
           Master Your <br className="hidden sm:block" />
-          <span className="bg-gradient-to-r from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent group-hover:via-primary-300 group-hover:to-primary-500 transition-all duration-500">
+          <span className="bg-linear-to-r from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent group-hover:via-primary-300 group-hover:to-primary-500 transition-all duration-500">
             Legal Documents
           </span>
         </h1>
@@ -59,7 +59,7 @@ export default function HeroSection() {
 
       {/* Floating Faux-App Visual Element */}
       <div className="relative mx-auto max-w-5xl mt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-500/10 to-transparent blur-3xl rounded-[3rem]"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-primary-500/10 to-transparent blur-3xl rounded-[3rem]"></div>
         
         {/* The "Glass Board" */}
         <div className="relative bg-neutral-900/40 border border-neutral-700/50 rounded-3xl p-4 sm:p-8 backdrop-blur-xl shadow-2xl overflow-hidden">
@@ -74,7 +74,7 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* 1. Summarize Card */}
-            <div className="bg-gradient-to-br from-blue-900/20 to-neutral-800/40 border border-blue-500/30 rounded-2xl p-6 relative transition-transform hover:-translate-y-1 duration-300 shadow-lg shadow-blue-500/5">
+            <div className="bg-linear-to-br from-blue-900/20 to-neutral-800/40 border border-blue-500/30 rounded-2xl p-6 relative transition-transform hover:-translate-y-1 duration-300 shadow-lg shadow-blue-500/5">
               <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4 border border-blue-500/20">
                 <FileSearch className="text-blue-400" size={24} />
               </div>
@@ -88,7 +88,7 @@ export default function HeroSection() {
             </div>
 
             {/* 2. Create Card */}
-            <div className="bg-gradient-to-b from-primary-900/20 to-neutral-800/40 border border-primary-500/30 rounded-2xl p-6 relative transition-transform hover:-translate-y-1 duration-300 shadow-xl shadow-primary-500/10">
+            <div className="bg-linear-to-b from-primary-900/20 to-neutral-800/40 border border-primary-500/30 rounded-2xl p-6 relative transition-transform hover:-translate-y-1 duration-300 shadow-xl shadow-primary-500/10">
               <div className="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mb-4 border border-primary-500/20">
                 <Wand2 className="text-primary-400" size={24} />
               </div>

@@ -28,7 +28,7 @@ export default function Navbar() {
         <a href="#" className="relative group flex items-center">
           <h1 className="text-2xl font-display font-bold tracking-tight">
             {/* White/Silver to subtle accent gradient */}
-            <span className="bg-gradient-to-br from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent transition-all duration-500 group-hover:via-primary-300 group-hover:to-primary-500">
+            <span className="bg-linear-to-br from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent transition-all duration-500 group-hover:via-primary-300 group-hover:to-primary-500">
               LegalEase
             </span>
           </h1>
