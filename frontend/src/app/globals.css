@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+/* =========================
+   THEME VARIABLES
+========================= */
+
+@theme {
+
+  /* Primary (Indigo) */
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+
+  /* Accent (Fuchsia) */
+  --color-accent-300: #f0abfc;
+  --color-accent-400: #e879f9;
+  --color-accent-500: #d946ef;
+  --color-accent-600: #c026d3;
+
+  /* Custom glow shadow */
+  --shadow-glow: 0 4px 20px -5px rgba(99, 102, 241, 0.25);
+}
+
+
+/* =========================
+   BASE STYLES
+========================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #09090b;
+  color: #fafafa;
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+
+/* =========================
+   GLOBAL LAYOUT SYSTEM
+========================= */
+
+@layer components {
+
+  /* Page container */
+  .container-page {
+    @apply mx-auto max-w-7xl px-6 lg:px-8;
+  }
+
+  /* Main sections */
+  .section {
+    @apply py-16 lg:py-24;
+  }
+
+  .section-sm {
+    @apply py-10 lg:py-14;
+  }
+
+  /* Vertical layout spacing */
+  .stack {
+    @apply flex flex-col gap-6;
+  }
+
+  .stack-lg {
+    @apply flex flex-col gap-10;
+  }
+
+}
+
+
+/* =========================
+   UI COMPONENTS
+========================= */
+
+@layer components {
+
+  /* Primary button */
+  .btn-primary {
+    @apply px-5 py-2.5 bg-primary-500 text-white rounded-lg font-medium
+    transition-all duration-200 hover:bg-primary-400 hover:shadow-glow
+    active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply px-5 py-2.5 bg-neutral-900 text-neutral-200 rounded-lg font-medium
+    border border-neutral-800 transition-all duration-200
+    hover:bg-neutral-800 hover:text-white
+    flex items-center justify-center gap-2;
+  }
+
+  /* Base card */
+  .card {
+    @apply bg-neutral-900/60 border border-neutral-800
+    rounded-xl p-6 backdrop-blur;
+  }
+
+  /* Minimal card (no padding) */
+  .card-base {
+    @apply bg-neutral-900/50 border border-neutral-800 rounded-xl overflow-hidden;
+  }
+
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+@layer components {
+
+  .input-base {
+    @apply w-full px-4 py-2.5 bg-neutral-950 border border-neutral-800
+    rounded-lg text-neutral-100 placeholder-neutral-500
+    focus:outline-none focus:border-primary-500
+    transition-colors duration-200;
+  }
+
+}
+
+
+/* =========================
+   SELECTION CHIPS
+========================= */
+
+@layer components {
+
+  .chip {
+    @apply px-4 py-2 rounded-full border border-neutral-800
+    bg-neutral-900/50 text-sm font-medium text-neutral-400
+    transition-all duration-200 cursor-pointer
+    hover:text-neutral-200 hover:border-neutral-600;
+  }
+
+  .chip-active {
+    @apply border-primary-500/50 bg-primary-500/10
+    text-primary-300
+    shadow-[0_0_10px_rgba(99,102,241,0.1)];
+  }
+
+}
+
+
+/* =========================
+   TEXT SELECTION
+========================= */
+
+::selection {
+  background-color: rgba(99, 102, 241, 0.3);
+  color: white;
+}

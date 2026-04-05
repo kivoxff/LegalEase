@@ -1,0 +1,22 @@
+fastapi
+uvicorn
+python-multipart
+
+# HTTP & config
+requests
+python-dotenv
+
+# Document handling
+python-docx
+mammoth
+
+# PDF handling
+PyPDF2
+pdf2docx
+
+# RTF support
+striprtf
+
+# PDF generation
+fpdf
+xhtml2pdf
