@@ -45,27 +45,27 @@ LEGAL-EASE/
 │
 ├── backend/
 │   ├── app/
-│   │   ├── main.py                # FastAPI entry point
+│   │   ├── main.py                        # FastAPI entry point
 │   │   │
 │   │   ├── api/
 │   │   │   ├── routes/
-│   │   │   │   ├── creation.py        # Generate + download documents
-│   │   │   │   ├── format_conversion.py # Convert document formats
-│   │   │   │   ├── summarization.py     # Summarize documents
+│   │   │   │   ├── creation.py            # Generate + download documents
+│   │   │   │   ├── format_conversion.py   # Convert document formats
+│   │   │   │   ├── summarization.py       # Summarize documents
 │   │   │
 │   │   ├── core/
-│   │   │   ├── ai_client.py           # AI logic (Groq or other models)
+│   │   │   ├── ai_client.py               # AI logic (Groq or other models)
 │   │   │
 │   │   ├── utils/
-│   │   │   ├── document_generator.py  # Handles docx/pdf generation
-│   │   │   ├── format_converter.py    # Handles doc conversion logic
-│   │   │   ├── file_parser.py         # Extract text from doc/pdf/rtf
+│   │   │   ├── document_generator.py      # Handles docx/pdf generation
+│   │   │   ├── format_converter.py        # Handles doc conversion logic
+│   │   │   ├── file_parser.py             # Extract text from doc/pdf/rtf
 │   │   │
 │   │   ├── __init__.py
 │   │
-│   ├── venv/                          # Python virtual environment
-│   ├── .env                           # Environment variables
-│   ├── requirements.txt               # Dependencies
+│   ├── venv/                              # Python virtual environment
+│   ├── .env                               # Environment variables
+│   ├── requirements.txt                   # Dependencies
 │   └── README.md
 │
 ├── frontend/
@@ -99,6 +99,8 @@ LEGAL-EASE/
 
 
 ## 🚀 Endpoints
+
+---
 
 ### 🔹 Summarize Document
 
